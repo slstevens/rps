@@ -1,8 +1,8 @@
-<h1>Hey, <%= @name %>!</h1>
+<h1>Hey, <%=session[:name]%>!</h1>
 
 <h2>Let's play Rock Paper Scissors!</h2>
 
-<form action="/result" post="post" >
+<form action="/result" method="post" >
 <input type="radio" name="object" value="rock" id="rock">Rock
 <input type="radio" name="object" value="paper" id="paper">Paper
 <input type="radio" name="object" value="scissors" id="scissors">Scissors
