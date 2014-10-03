@@ -23,6 +23,7 @@ enable :sessions
   end
 
   post '/result' do
+  	session[:object] = params[:object] 
   	erb :result
   end
 
