@@ -1,0 +1,40 @@
+[31mF[0m[31mF[0m[31mF[0m[31mF[0m[32m.[0m[32m.[0m
+
+Failures:
+
+  1) Game when playing Player 1 chooses rock and WINS if Player 2 chooses scissors
+     [31mFailure/Error: expect(game.winner).to eq player_one.name[0m
+     [31mNameError:[0m
+     [31m  undefined local variable or method `game' for #<Game:0x007fa1e3cae478>[0m
+     [36m# ./lib/game.rb:11:in `winner'[0m
+     [36m# ./spec/game_spec.rb:19:in `block (3 levels) in <top (required)>'[0m
+
+  2) Game when playing Player 1 chooses paper and WINS if Player 2 chooses rock
+     [31mFailure/Error: expect(game.winner).to eq player_one.name[0m
+     [31mNameError:[0m
+     [31m  undefined local variable or method `game' for #<Game:0x007fa1e3d372f0>[0m
+     [36m# ./lib/game.rb:11:in `winner'[0m
+     [36m# ./spec/game_spec.rb:25:in `block (3 levels) in <top (required)>'[0m
+
+  3) Game when playing Player 1 chooses scissors and WINS if Player 2 chooses paper
+     [31mFailure/Error: expect(game.winner).to eq player_one.name[0m
+     [31mNameError:[0m
+     [31m  undefined local variable or method `game' for #<Game:0x007fa1e3d34230>[0m
+     [36m# ./lib/game.rb:11:in `winner'[0m
+     [36m# ./spec/game_spec.rb:31:in `block (3 levels) in <top (required)>'[0m
+
+  4) Game when playing Player 1 and Player 2 DRAW if they choose the same object
+     [31mFailure/Error: expect(game.draw?).to eq true[0m
+     [31mNoMethodError:[0m
+     [31m  undefined method `draw?' for #<Game:0x007fa1e3d3c200>[0m
+     [36m# ./spec/game_spec.rb:37:in `block (3 levels) in <top (required)>'[0m
+
+Finished in 0.0075 seconds (files took 0.11312 seconds to load)
+[31m6 examples, 4 failures[0m
+
+Failed examples:
+
+[31mrspec ./spec/game_spec.rb:16[0m [36m# Game when playing Player 1 chooses rock and WINS if Player 2 chooses scissors[0m
+[31mrspec ./spec/game_spec.rb:22[0m [36m# Game when playing Player 1 chooses paper and WINS if Player 2 chooses rock[0m
+[31mrspec ./spec/game_spec.rb:28[0m [36m# Game when playing Player 1 chooses scissors and WINS if Player 2 chooses paper[0m
+[31mrspec ./spec/game_spec.rb:34[0m [36m# Game when playing Player 1 and Player 2 DRAW if they choose the same object[0m
