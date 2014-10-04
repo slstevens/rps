@@ -1,7 +1,15 @@
-<h1>You chose <%=session[:object]%></h1>
+<h1>You chose <%= PLAYER.choice.to_s.capitalize %></h1>
 
-<h1>Your opponent chose Rock / Paper / Scissors</h1>
+<h1>Your opponent chose <%= OPPONENT.choice.to_s.capitalize%></h1>
 
-<h2>You won/lost/draw</h2>
+<%if GAME.draw? == true%>
+<h2> DRAW!</h2>
+<%elsif GAME.winner == "Opponent" %>
+<h2> You lost!</h2>
+<%elsif GAME.winner == PLAYER.name%>
+<h2> You won!</h2>
+<%end%>
 
-Play again
+<form action="/play_again" method="post">
+<input type="submit" value="Play again!">
+</form>

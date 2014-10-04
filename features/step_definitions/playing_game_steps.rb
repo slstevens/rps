@@ -13,3 +13,7 @@ end
 Then(/^I should see the result of the Game$/) do
 	visit '/result'
 end
+
+When(/^I select the rock form field$/) do
+	choose("rock")
+end

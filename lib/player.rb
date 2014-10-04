@@ -1,13 +1,11 @@
 class Player
 
 	attr_reader :choice
-
 	# same as 
 	# def choice
 	# 	@choice
 	# end
 	attr_accessor :name
-
 	# same as what?
 	# def choice
 	# 	@choice

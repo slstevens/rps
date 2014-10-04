@@ -5,6 +5,6 @@ Feature: Playing the game
 
 Scenario: Choosing your object
 	Given I am on the game page
-	Then I should select the form field corresponding to the image
+	When I should select the form field corresponding to the image
 	And I should click on "Go!"
 	And I should see the result of the Game

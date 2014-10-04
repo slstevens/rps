@@ -1,9 +1,17 @@
 require 'sinatra/base'
+require_relative 'game'
+require_relative 'player'
 
 class RockPaperScissors < Sinatra::Base
 
 set :views, Proc.new { File.join(root, ".." , "views") }
 enable :sessions
+
+GAME = Game.new
+PLAYER = Player.new
+OPPONENT = Player.new("Opponent")
+GAME.player_one = PLAYER
+GAME.player_two = OPPONENT
 
   get '/' do
     erb :index
@@ -14,7 +22,7 @@ enable :sessions
   end
 
   post '/new_game' do
-  	session[:name] = params[:name] 
+  	PLAYER.name = params[:name] 
   	erb :game
   end
 
@@ -23,10 +31,14 @@ enable :sessions
   end
 
   post '/result' do
-  	session[:object] = params[:object] 
+  	PLAYER.choose(params[:object])
+    OPPONENT.choose([:rock, :paper, :scissors].sample)
   	erb :result
   end
 
+  post '/play_again' do
+    erb :game
+  end
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
